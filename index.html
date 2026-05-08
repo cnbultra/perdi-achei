@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdi & Achei | Central de achados e perdidos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero" id="inicio" aria-label="inicio">
+<!--Links-->
+<nav class="nav">
+    <a class="marca" href="#inicio">
+    <img src="assets/logo-perdi-achei.svg" alt=""
+     class="marca-img">
+    </a>
+    <div class="nav-links" aria-label="navegação principal">
+        <a href="#cadastro">cadastrar</a>
+        <a href="#registros">Registros</a>
+    </div>
+</nav>
+<!--conteudo central-->
+<section class="hero-conteudo">
+    <div class="hero-texto">
+        <h1>perdeu? achou? Registre aqui</h1>
+        <p>uma central simples para cadastrar objetos perdidos ou encontrados na unipar.</p>
+    <div class="acao">
+        <!--Class = "btn btn-principal": encapsulamento de classes, classes complementares-->
+        <a href="#cadastro" class="btn btn-principal">
+            cadastrar objeto
+        </a>
+        <a href="#registros" class="btn btn-secundario">
+            ver registros
+        </a>
+    </div>
+    <!--barra lateral do site-->
+    <aside class="hero-card" aria-label="resumo do sistema">
+        <img src="assets/hero-achados-perdidos.svg"
+        alt="ilustrção de objetos" />
+        <div class="hero-metricas">
+            <!--lembrança para o futuro: o js vai atualizar isso-->
+        <div>
+        <strong id="totalregistros">0</strong>
+        <span>registros</span>
+        </div>
+        </div>
+    </aside>
+</section>
+</header>
+<main class="container">
+    <section class="grid-principal">
+        <!--article: artigo, "foco do site"-->
+        <article class="card" id="cadastro">
+            <div class="card-cabecalho">
+                <img src="assets/formulario.svg" alt="">
+                <div>
+                    <h2>cadastrar objeto</h2>
+                    <p>informe os dados do objeto</p>
+                </div>
+            </div>
+            <!--auto complete = off, nao sugere campos-->
+            <form id="formObjeto" autocomplete="off">
+                <label>nome do objeto</label>
+                <input type="text" name="objeto" maxlength="80"
+                 placeholder="Ex.: mochila, chave, carteira" required />
+                 <!--vou criar uma div para dividir em colunas-->
+                 <div class="coluna-dois">
+                    <label>tipo</label>
+                    <!--campo de seleção-->
+                    <select name="tipo" required>
+                        <option value="">selecione</option>
+                        <option value="perdido">perdido</option>
+                        <option value="encontrado">encontrado</option>
+                    </select>
+                    <label>data</label>
+                    <input type="data" name="data" required />
+                 </div>
+                 <label>local</label>
+                 <input type="text" name="local" maxlength="100" placeholder="ex.: laboratorio 2, biblioteca, patio" required />
+                 <label>descrição</label>
+                 <!--<textarea> permite texto-->
+                 <textarea name="descrição" maxlength="360" placeholder="descreva cor, marca, detalhes...." required >
+                 </textarea>
+                 <label>contato</label>
+                 <input type="text" name="contato" maxlength="100" placeholder="E-mail, watsapp..." required />
+                 <button type="submit" class="btn btn-form">salvar</button>
+                </form>
+      </article>
+    </section>
+</main>
+</body>
+</html>
